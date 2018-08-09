@@ -4,9 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Backpack\CRUD\CrudTrait; // <------------------------------- this one
+use Spatie\Permission\Traits\HasRoles;// <---------------------- and this one
 
 class User extends Authenticatable
 {
+    use CrudTrait; // <----- this
+    use HasRoles; // <------ and this
     use Notifiable;
 
     /**
